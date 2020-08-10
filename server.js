@@ -41,7 +41,12 @@ var server = http.createServer(function (request, response) {
     response.write(fs.readFileSync('public/style.css'))
     response.end()
 
-  } else {
+  } else if (path === '/main1.js') {
+    response.statusCode = 200
+    response.setHeader('Content-Type', 'text/javascript;charset=utf-8')
+    response.write(fs.readFileSync('public/main1.js'))
+    response.end()
+  }else {
     response.statusCode = 404
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
     response.write(`你输入的路径不存在对应的内容`)
