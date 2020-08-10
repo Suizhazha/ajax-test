@@ -31,3 +31,19 @@ getJS.onclick =()=>{
     }
     xhr.send()
 }
+
+getHTML.onclick =()=>{
+  const xhr = new XMLHttpRequest()
+  xhr.open('GET','/main.html')
+  xhr.onload =()=>{
+    console.log(xhr.response)
+
+    const div = document.createElement('div')
+    div.innerHTML = xhr.response
+    document.body.appendChild(div)
+  }
+  xhr.onerror =()=>{
+
+  }
+  xhr.send()
+}
