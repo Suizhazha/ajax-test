@@ -82,11 +82,14 @@ getNextpage.onclick = () => {
 array.forEach(item=>{
   const li = document.createElement('li')
   li.textContent = item.id
-  xxx.appendChild(li)
+  //直接xxx.appendchild也可以
+  document.querySelector('#xxx').appendChild(li)
 })
       n+=1
     }
 
   }
+
+
 xhr.send()
 }
